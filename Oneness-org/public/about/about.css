@@ -1,0 +1,163 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --drop-shadow: 100px;
+}
+
+.nav-logo > img{
+    height: 13rem;
+    
+        filter: drop-shadow( var(--drop-shadow) #000000);
+        -webkit-filter: drop-shadow(7px 7px 7px #000000);
+}
+.nav-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@font-face {
+    font-family: 'Avgardd';
+    src: url('../assets/fonts/AVGARDD_2.TTF');
+}
+
+.nav-logo > h1 {
+    font-family: 'Avgardd';
+    font-size: 2rem;
+    font-weight: 900;
+    /* font-weight: 900;; */
+}
+nav{
+    
+    z-index: 1000;
+    margin-top: 1rem;
+
+    position: fixed;
+    top:0;
+    left:0;
+
+    box-sizing: border-box;
+
+    height: 5rem;
+    width:100vw;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5rem;
+    /* padding-inline: 8rem; */
+}
+
+nav > ul{
+    height:100%;
+    border-radius: 100px 0px 0 100px ;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 5rem;
+    padding-left: 5rem;
+
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav-overlay{
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    top: 5rem;
+    right:0;
+
+    max-width: 70vw;
+    height: 100vh;
+
+
+    background-color: rgba(39, 177, 190,  0.2);
+    transform: translateX(100%);
+}
+.nav-overlay > h1 {
+    font-family: 'Avgardd';
+    font-size: 2rem;
+    font-weight: 900;
+    /* font-weight: 900;; */
+    margin: 0;
+    padding: 0;
+    margin-inline: 2rem;
+
+    /* margin-left: 5rem; */
+    /* margin-top: 5rem; */
+}
+
+.nav-overlay > ul {
+    display: flex;
+    flex-direction: column;
+}
+.nav-overlay > ul > li {
+    list-style: none;
+    margin-block: 1rem;
+    /* margin-inline: 1rem; */
+}
+
+/* write top animation classes to move the nav in and out*/
+
+.nav-hide{
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+}
+.nav-show{
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in-out;
+}
+
+nav > ul > li{
+    list-style: none;
+    margin: 0 1rem;
+}
+
+.ham-svg{
+    display: none;
+}
+.cross-svg {
+    display: none;
+    height: 3rem;
+    margin-right: 3rem;
+}
+
+
+@media screen and (max-width: 1100px){
+
+    nav{
+        margin-top: 0;
+        background-color: rgba(39, 177, 190,  0.2);
+        /* backdrop-filter: blur(3p); */
+    }
+
+    nav > ul {
+        display: none;
+    }
+    .ham-svg {
+        display: block;
+        height: 3rem;
+        margin-right: 3rem;
+    }
+
+    nav{
+        padding:0;
+    }
+    
+    .nav-logo > img{
+        height: 8rem;
+    }
+
+    nav > h1 {
+        display: none;
+        /* font-size : 1rem; */
+        /* font-weight: 900; */
+    }
+
+}
